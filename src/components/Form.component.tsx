@@ -1,6 +1,11 @@
 import { useState } from "react";
+import { Item } from "../types/item.type";
 
-export const Form = () => {
+export const Form = ({
+  onAddItems,
+}: {
+  onAddItems: (newItem: Item) => void;
+}) => {
   const [description, setDescription] = useState("");
   const [quantity, setQuantity] = useState(1);
 
@@ -8,6 +13,7 @@ export const Form = () => {
     e.preventDefault();
     if (!description.trim()) return;
     const newItem = { description, quantity, packed: false, id: Date.now() };
+    onAddItems(newItem);
     setDescription("");
     setQuantity(1);
   };

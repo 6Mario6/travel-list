@@ -12,7 +12,7 @@ export const Item = ({
         {item.quantity} {item.description}
       </span>
       <button
-        onChange={() => {
+        onClick={() => {
           onDeleteItem(item.id);
         }}
       >

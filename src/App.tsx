@@ -39,7 +39,7 @@ export const App = () => {
         onToggleItem={handleToggleItem}
         items={items}
       />
-      <Stats />
+      <Stats items={items} />
     </div>
   );
 };

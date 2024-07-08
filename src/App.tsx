@@ -30,6 +30,15 @@ export const App = () => {
     );
   };
 
+  const handleClearList = () => {
+    const confirmed = window.confirm(
+      "Are you sure you want to delete all items?"
+    );
+    if (confirmed) {
+      setItems([]);
+    }
+  };
+
   return (
     <div className="app">
       <Logo />
@@ -37,6 +46,7 @@ export const App = () => {
       <PackingList
         onDeleteItem={handleDeleteItem}
         onToggleItem={handleToggleItem}
+        onClearList={handleClearList}
         items={items}
       />
       <Stats items={items} />

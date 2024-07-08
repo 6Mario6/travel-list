@@ -5,10 +5,12 @@ export const PackingList = ({
   items,
   onDeleteItem,
   onToggleItem,
+  onClearList,
 }: {
   items: ItemType[];
   onDeleteItem: (id: number) => void;
   onToggleItem: (id: number) => void;
+  onClearList: () => void;
 }) => {
   const [sortBy, setSortBy] = useState("input");
   let sortedItems: ItemType[] = [];
@@ -43,6 +45,7 @@ export const PackingList = ({
           <option value="description">Sort by description</option>
           <option value="packed">Sort by packed status</option>
         </select>
+        <button onClick={onClearList}>Clear list</button>
       </div>
     </div>
   );

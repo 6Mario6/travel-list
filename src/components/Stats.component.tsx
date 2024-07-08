@@ -2,9 +2,9 @@ import { Item } from "../types/item.type";
 export const Stats = ({ items }: { items: Item[] }) => {
   if (!items.length) {
     return (
-      <p className="footer">
+      <footer className="stats">
         <em>Start adding some items to your packing list ✌️🚀</em>
-      </p>
+      </footer>
     );
   }
   const numItems = items.length;
